@@ -1,0 +1,18 @@
+## Goal: Send terminal message from client -> server & vice versa 
+## Key Questions
+- What are the 3 common protocols for establishing client-server connection
+- Why is TCP more appropriate
+- How does TCP communication work
+    - Establish Connection
+    - Send requests and receive responses in TCP 
+- How can we use Node.js tools in order to translate TCP communication workings into code
+
+## What we know 
+- in Establishing Connection, the TCP 3-way handshake is done under the hood by node.js through:
+    1. establish a server instance in order to open up a port that would be able to send (client) and receive (server).
+       In the server-side, the OS will open up the port and accept SYN packets 
+    2. THe client-side needs to pass information (port & IP)
+
+## Breakdwon
+1. Establish Connection
+2. Send and Receive Data
