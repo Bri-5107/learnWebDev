@@ -1,7 +1,7 @@
 // listener
 
 // here is the toolkit to allow for asynchronous networking API
-const net = require('node: net'); 
+const net = require('node:net'); 
 
 
 // build the TCP server, establish connection => fire connection event = socket object created 

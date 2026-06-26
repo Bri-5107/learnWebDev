@@ -1,7 +1,7 @@
 // initiator
 
 // here is the toolkit to allow for asynchronous networking API
-const net = require('node: net'); 
+const net = require('node:net'); 
 
 // make client initiate connection
 const port = 3000;
