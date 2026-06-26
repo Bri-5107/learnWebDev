@@ -6,7 +6,7 @@ const net = require('node:net');
 
 // build the TCP server, establish connection => fire connection event = socket object created 
 const server = net.createServer((socket) => {
-    console.log('Client connected');
+    console.log('Hi client');
     
 
 });
