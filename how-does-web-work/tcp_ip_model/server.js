@@ -1,15 +1,25 @@
 // listener
 
+// PHASE 1: Establish Connection 
+
 // here is the toolkit to allow for asynchronous networking API
 const net = require('node:net'); 
 
 
 // build the TCP server, establish connection => fire connection event = socket object created 
 const server = net.createServer((socket) => {
-    console.log('Hi client');
+    console.log('Server: Connection Established');
     
+    // PHASE 2: Receive Data from Client 
+    socket.on('data', (data) => {
+        console.log('Data Received: ' + data);
+
+         // PHASE 3: Reply to Client 
+         socket.write('Hello din sa\'yo, Client')
+    })
 
 });
+
 
 // bind a server to an entrypoint 
 const port = 3000;
