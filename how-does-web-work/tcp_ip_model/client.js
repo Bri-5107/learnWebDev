@@ -17,8 +17,22 @@ const client = net.createConnection(port, host, ()=> {
     // PHASE 3: Listen for Server Reply 
     client.on('data', (data) => {
         console.log('Data Received: ' + data);
+
+        client.end();
     });
 
+
+  
 });
+
+ // PHASE 4: Close Connection
+client.on('close', () => {
+    console.log('Connection Closed');
+});
+
+
+
+
+
 
 

@@ -14,10 +14,15 @@ const server = net.createServer((socket) => {
     socket.on('data', (data) => {
         console.log('Data Received: ' + data);
 
-         // PHASE 3: Reply to Client 
-         socket.write('Hello din sa\'yo, Client')
+     // PHASE 3: Reply to Client 
+    socket.write('Hello din sa\'yo, Client');
+
     })
 
+    // PHASE 4: Close Connection
+    socket.on('close', () => {
+        console.log('Clinet Disconnected');
+    })
 });
 
 
