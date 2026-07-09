@@ -1,0 +1,43 @@
+http is  protocol used by layer 7 devices to talk to each other (client - server)
+
+what happens is:
+1. url request by the client is resolved by dns
+2. after getting the ip address of the url, before the request reaches the server
+3. it is blocked by a firewall to prevent blocked domains from entering
+4. once it reaches the erver it is intercepted by Nginx (proxy) in order to i dont know
+5. finally it reaches AWS ec2 serer 
+6. aws ec2 server returns it back to the client 
+
+the message between cleint and server has two types: 
+1. Requeset message 
+2. Response message
+
+both of them have the same parts: 
+1. HTTP Method (what is the operation being requested | what is the response to the operation requested)
+2. HTTP Header (contains metadata about the request/response. There are different types of http headers:
+    - general : used for i dont know
+    -         : used for behavior)
+3. Body (i dont know | server: the information being requested )
+
+CORS Workflow
+- aka cross origin something. Basically it allows you to communicate with a server of different domain? 
+- it has two messages: pre-flight (which is like a reconnaisance i dont know for what) and a simple request 
+- this workflow also includes http caching and negotiation. In http caching, if a client requests something from a server,
+  it firsts checks itself if it already has the service in request in its cache, therefore there will be noresponse message
+  An http negotiation is i dont know 
+- for http requests/response that are too large. HTTP request, breaks the request into chunks and sends in one by one to the server
+   same concept for response, it sends the rsponse in stream-based chunks to the client
+
+
+HTTP Option 
+- Forgot
+
+HTTP METHODS
+- Post (Create)
+- Put (Update whole)
+- Patch (Update only a specific part)
+- Get (Read)
+
+Idempotent vs Non-Idempotent
+- when i perform an htpp method (will the data structure remain the same? If yes, idempotent, otherwise, non-idempotent)
+
