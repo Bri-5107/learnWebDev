@@ -25,4 +25,26 @@
 The web works through continuous stream of client request and server responses, following the U-shape TCP/IP model. 
 
 It starts with DNS (Domain Name Server) Resolving. It involves 5 players: Client -> Recursive Resolver <-> Root Server,
-Top-Level Domain, and Authoritative Name Server. 
+Top-Level Domain, and Authoritative Name Server. Copmuters can only understand numbers while us humans, alphabet. When you
+type google.com, the computer doesn't understand it, therefore you need DNS in order to convert google.com -> numbers.
+
+The goal is to go from general to specific (domain to IP address)
+
+1. So, when you type google.com in your web browser, if the address is not found in the local cache it move it into
+   the Recursive Resolver
+2. The Recursive Resolver sequentially asks the Root, TLD, and Authoritative. 
+3. The Root contains the domain (.com, .net, .org, etc ). It says to RResolver, to go to TLD 
+4. TLD contains the only the specific domain (.com) then says to RResolver to go to Authoritative
+5. Authoritative is the 'final boss' that contains the mapping of google.com to IP address, which will be received by the
+   RResolver and back to the client 
+
+Now, here comes the next phase: 
+
+For background, different manufacturers have different protocols (language), meaning an Apple Computer cannot communicate
+with an Apple computer. Now, we have an international standard know as TCP/IP and/or OSI model that provides the standard
+communication rule for all devices. 
+
+TCP/IP is the standard being used while OSI is for theoretical understanding:
+
+Application Layer (TCP)
+1. 
