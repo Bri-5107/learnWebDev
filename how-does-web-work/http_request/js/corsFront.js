@@ -5,7 +5,7 @@ const simpleResponse =  document.getElementById('simpleResponse');
 // function parameter for the addEventListener function(event, function)
 async function sendSimpleRequest(event){
     try {
-       const fetchRequest = await fetch('http://127.0.0.1:3000/simple');
+       const fetchRequest = await fetch('http://127.0.0.1.nip.io:3000/simple');
        const message = await fetchRequest.text();
        //Display server response in the console 
        console.log(message);
