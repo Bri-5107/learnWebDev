@@ -1,17 +1,21 @@
 // get the button from HTML using document object 
 const simpleButton = document.getElementById("simpleButton");
+const simpleResponse =  document.getElementById('simpleResponse');
 
 // function parameter for the addEventListener function(event, function)
 async function sendSimpleRequest(event){
     try {
-       const fetchRequest = await fetch('http://127.0.0.1:8080/simple');
+       const fetchRequest = await fetch('http://127.0.0.1:3000/simple');
        const message = await fetchRequest.text();
+       //Display server response in the console 
        console.log(message);
-
+        
+       // Display server response to the webpage
+       simpleResponse.innerText = message;
         
     } catch (error) {
         console.error('Fetch failed:', error);
-
+        simpleResponse.innerText = "Error: Could not reach the server."; 
     }
     
 };
