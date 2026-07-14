@@ -3,7 +3,7 @@ import http, { get } from 'node:http';
 
 // 1. Setup Server 
 const hostname = '127.0.0.1';
-const port = '8080';
+const port = '3000';
 
 
 const server = http.createServer((request, response) => {
@@ -24,7 +24,7 @@ const server = http.createServer((request, response) => {
 }); 
 
 // Listen for incoming requests
-server.listen(8080);
+server.listen(3000);
 
 
 
