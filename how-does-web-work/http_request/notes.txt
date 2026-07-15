@@ -41,3 +41,28 @@ HTTP METHODS
 Idempotent vs Non-Idempotent
 - when i perform an htpp method (will the data structure remain the same? If yes, idempotent, otherwise, non-idempotent)
 
+
+
+# Document Object Model (DOM)
+HTML Document is static and has no interactivity that programming languages provide. 
+So, what the Web Browser does are two things:
+
+1. It loads the static HTML File into a shape of a tree
+
+2. It provides programming languages, the Document Object Model (DOM) API so that it can 
+treat each node of the tree as an object and manipulate its content, structure, and style
+
+
+
+The Object Tree looks like this:
+
+WINDOW
+    Document
+        Elements
+            Attributes
+            Text
+
+
+
+where each node of the tree has various interfaces assigned to it which are useful in how we define the methods and properties for it 
+
