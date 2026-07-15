@@ -43,5 +43,10 @@ server.listen(3000);
  * 
  * ACTIVE RECALL QUESTIONS:
  * - What are the different modules you can use in order for an HTTP backend server to receive a HTTP frontend request
+ * - How to create server and establish connection 
+ * - What is the key response to a CORS client
+ * - How to properly choose port
+ * - Explain the role of FoxProxy and Caido 
+ * 
  * 
  */
