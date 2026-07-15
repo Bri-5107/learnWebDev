@@ -1,17 +1,21 @@
 // get the button from HTML using document object 
 const simpleButton = document.getElementById("simpleButton");
 const simpleResponse =  document.getElementById('simpleResponse');
+const flightButton = document.getElementById("flightButton");
+const flightResponse = document.getElementById("flightResponse");
 
+
+//SIMPLE REQUSET
 // function parameter for the addEventListener function(event, function)
 async function sendSimpleRequest(event){
     try {
-       const fetchRequest = await fetch('http://127.0.0.1.nip.io:3000/simple');
-       const message = await fetchRequest.text();
+       const fetchSimpleRequest = await fetch('http://127.0.0.1.nip.io:3000/simple');
+       const simpleMessage = await fetchSimpleRequest.text();
        //Display server response in the console 
-       console.log(message);
+       console.log(simpleMessage);
         
        // Display server response to the webpage
-       simpleResponse.innerText = message;
+       simpleResponse.innerText = simpleMessage;
         
     } catch (error) {
         console.error('Fetch failed:', error);
@@ -23,6 +27,28 @@ async function sendSimpleRequest(event){
 simpleButton.addEventListener("click", sendSimpleRequest);
 
 
+//PRE-FLIGHT REQUEST
+async function sendPreFlightRequest(event) {
+    try {
+        const fetchFlightRequest = await fetch("http://127.0.0.1.nip.io:3000/flight", {
+            method: "GET",
+            headers: {
+                "Content-type" : "application/json"
+            }
+        });
+
+        const flightMessage = await fetchFlightRequest.text();
+        console.log(flightMessage);
+        flightResponse.innerText = flightMessage;
+
+    } catch (error) {
+        console.error('Fetch failed:', error);
+        flightResponse.innerText = "Error: Could not reach the server."; 
+    }
+    
+}
+
+flightButton.addEventListener("click", sendPreFlightRequest);
 
 
 
