@@ -3,9 +3,15 @@ const simpleButton = document.getElementById("simpleButton");
 const simpleResponse =  document.getElementById('simpleResponse');
 const flightButton = document.getElementById("flightButton");
 const flightResponse = document.getElementById("flightResponse");
+const corsPageButton = document.getElementById("corsPage");
 
 
-//SIMPLE REQUSET
+// Navigation Button 
+corsPageButton.addEventListener('click', () => {
+    window.location.assign('cors.html');
+});
+
+// SIMPLE REQUSET
 // function parameter for the addEventListener function(event, function)
 async function sendSimpleRequest(event){
     try {
@@ -27,7 +33,7 @@ async function sendSimpleRequest(event){
 simpleButton.addEventListener("click", sendSimpleRequest);
 
 
-//PRE-FLIGHT REQUEST
+// PRE-FLIGHT REQUEST
 async function sendPreFlightRequest(event) {
     try {
         const fetchFlightRequest = await fetch("http://127.0.0.1.nip.io:3000/flight", {
