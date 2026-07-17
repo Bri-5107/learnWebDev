@@ -12,29 +12,48 @@
 
     <body> 
 
-        <h1> 2 Types of CORS (Cross-Origin Resource Sharing) </h1>
-        
-        <!-- Simple Request -->
-        <p>
-            <h1>Simple Request</h1>
-            This request is used when the HTTP method is considered "safe" such as GET or POST basic 
-            text data. The request would be directly sent to the server.
-        </p>
+        <div class="page-container">
+            <main class="main-content">
 
-        <p id = 'simpleResponse'></p>
-            
-        <span><button id="simpleButton" type="button">Send Request</button></span>
-        
-        <!-- Simple Request -->
-        <p>
-            <h1>Pre-flight Request</h1>
-            This request is used when the HTTP method is considered "unsafe" such as PUT, PATCH, DELETE. Furthermore, 
-            the Content-type includes modern format such as JSON files and Authentication tokens. 
-        </p>
+                 <!-- CORS PAGE -->
+                <section class="cors-page">
+                    <h1> 2 Types of CORS (Cross-Origin Resource Sharing) </h1>
+                    
+                    <!-- Simple Request -->
+                    <p>
+                        <h1>Simple Request</h1>
+                        This request is used when the HTTP method is considered "safe" such as GET or POST basic 
+                        text data. The request would be directly sent to the server.
+                    </p>
 
-        <p id="flightResponse"></p>
-        <span><button id="flightButton" type="button">Send Request</button></span>
-        
-    
+                    <p id = 'simpleResponse'></p>
+                        
+                    <span><button id="simpleButton" type="button">Send Request</button></span>
+                    
+                    <!-- Pre-Flight Request -->
+                    <p>
+                        <h1>Pre-flight Request</h1>
+                        This request is used when the HTTP method is considered "unsafe" such as PUT, PATCH, DELETE. Furthermore, 
+                        the Content-type includes modern format such as JSON files and Authentication tokens. 
+                    </p>
+
+                    <p id="flightResponse"></p>
+                    <span><button id="flightButton" type="button">Send Request</button></span>
+                </section>
+
+                <!-- CACHE PAGE -->
+                <section class="cache-page">
+                    
+                </section>
+            </main>
+
+            <!-- PAGE NAV -->
+            <nav class="page-nav">
+                <button id="corsPage" type="button"> CORS </button>
+                <button id="cachePage" type="button"> Caching </button>
+                <button id="negotiatePage" type="button"> Negotation </button>
+                <button id="largeMessages" type="button"> Large Messages </button>
+            </nav>
+        </div>
     </body>
 </html>
