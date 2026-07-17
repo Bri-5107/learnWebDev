@@ -36,7 +36,7 @@ const server = http.createServer((request, response) => {
 }); 
 
 // Listen for incoming requests
-server.listen(3000);
+server.listen(port);
 
 
 
