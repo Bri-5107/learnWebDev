@@ -1,3 +1,19 @@
 p span {
     display: block;
 }
+
+/* Extend the page/viewport vertically with flexible formatting */
+.page-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* pushes everything below it, including the button, to the bottom */
+}
+
+.bottom-button {
+  margin-top: auto; /* forces the button to the bottom */
+}
+
