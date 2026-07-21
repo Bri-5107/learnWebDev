@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> HTTP Request Simulation </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name = "author" content = "Brian Dionisio">
+        <meta name = "description" content = "This website is to simulation HTTP Requests">
+        <link rel="stylesheet" href="style.css"> 
+        <script src = "./js/cachingClient.js"  type="module"></script>
+    </head>
+
+    <body> 
+
+        <div class="page-container">
+            <main class="main-content">
+
+                 <!-- CACHE PAGE -->
+                <section class="cors-page">
+                    <h1> HTTP Caching </h1>
+                    <p>
+                        <h2>Purpose</h2>
+                        HTTP Caching allows browser to load resources faster by keeping them in the browser's local storage
+                        (cache). This prevents the browswer to repeatedly ask the server for the resource. The only time it
+                        requests from the server is when the resource is outdated or missing. 
+
+                        The following headers are used in HTTP Caching Messages:
+                        <h5> Response Headers: </h5> 
+                        <ol type="1">
+                            <li>
+                                Cache-Control: "Hi browswer, the resource is fresh for only 10 seconds. After that. requet 
+                                back to me."
+                            </li>
+                            <li>
+                                Entity Tag (ETag): "Hey browswer, I am the hashed version of the specific version of the resource.
+                                If the resource get updated, I too will be."
+                            </li>
+                            <li>
+                                Last-Modified: "Hi browser, I contain the date and time when the resource was last modified."
+                            </li>
+                        </ol>
+
+                        <h5> Request Headers: </h5> 
+                        <ol type="1">
+                            <li>
+                                If-None-Modified: "Hi server, 10 seconds is up, may I ask if the ETag you gave me earlier is still the
+                                same as now?"
+                            </li>
+                            <li>
+                                If-Modified-Since: "Hey server, I want to also ask if the date and time was updated? "
+                            </li>
+                        </ol>
+
+                        The server returns a 304 NOT MODIFIED if the resource has not been updated. 
+                    </p>
+
+                    <p id="cacheResponse"></p> 
+                     <p id="updateResponse"></p> 
+                    <span><button id="cacheButton" type="button">Send Request</button></span>
+                    <button id="updateButton" type="button">Update Resource</button>
+                </section>
+            </main>
+
+            <!-- PAGE NAV -->
+            <nav class="page-nav">
+                <button id="corsPage" type="button"> CORS </button>
+                <button id="cachePage" type="button"> Caching </button>
+                <button id="negotiatePage" type="button"> Negotation </button>
+                <button id="largeMessages" type="button"> Large Messages </button>
+            </nav>
+        </div>
+    </body>
+</html>
