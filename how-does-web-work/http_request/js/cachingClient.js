@@ -1,13 +1,25 @@
-const cachePageButton = document.getElementById("cachePage");
 const cacheButton = document.getElementById("cacheButton");
 const cacheResponse = document.getElementById("cacheResponse");
 
 const updateButton = document.getElementById("updateButton")
 const updateResponse = document.getElementById('updateResponse');
 
-// Navigation button
+const corsPageButton = document.getElementById("corsPage");
+const cachePageButton = document.getElementById("cachePage");
+const negotiatePage = document.getElementById("negotiatePage");
+
+
+// Navigation Button 
+corsPageButton.addEventListener('click', () => {
+    window.location.assign('cors.html');
+});
+
 cachePageButton.addEventListener('click', () => {
     window.location.assign('caching.html');
+});
+
+negotiatePage.addEventListener('click', () => {
+    window.location.assign('negotiate.html');
 });
 
 // Send PATCH Pre-flight Request

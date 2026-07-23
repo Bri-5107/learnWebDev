@@ -3,12 +3,23 @@ const simpleButton = document.getElementById("simpleButton");
 const simpleResponse =  document.getElementById('simpleResponse');
 const flightButton = document.getElementById("flightButton");
 const flightResponse = document.getElementById("flightResponse");
+
 const corsPageButton = document.getElementById("corsPage");
+const cachePageButton = document.getElementById("cachePage");
+const negotiatePage = document.getElementById("negotiatePage");
 
 
 // Navigation Button 
 corsPageButton.addEventListener('click', () => {
     window.location.assign('cors.html');
+});
+
+cachePageButton.addEventListener('click', () => {
+    window.location.assign('caching.html');
+});
+
+negotiatePage.addEventListener('click', () => {
+    window.location.assign('negotiate.html');
 });
 
 // SIMPLE REQUSET
@@ -75,5 +86,5 @@ flightButton.addEventListener("click", sendPreFlightRequest);
  * - How to build a fetch request 
         - What are the parameters, return object? 
         - How to build try and catch-response 
- *      - 
+ * - Dfferentiate window.location.assign, .replace, .href = 'url' ? 
  */
