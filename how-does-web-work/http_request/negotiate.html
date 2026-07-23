@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> HTTP Request Simulation </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name = "author" content = "Brian Dionisio">
+        <meta name = "description" content = "This website is to simulation HTTP Requests">
+        <link rel="stylesheet" href="style.css"> 
+        <script src = "./js/corsFront.js"  type="module"></script>
+        <script src = "./js/caching.js"  type="module"></script>
+    </head>
+
+    <body> 
+
+        <div class="page-container">
+            <main class="main-content">
+
+                 <!-- NEGOTIATE PAGE -->
+                <section class="cors-page">
+                    <h1> HTTP Negotation </h1>
+                    
+                    <!-- Definition -->
+                    <p>
+                        <h2>What?</h2>
+                        <h5> Problem: </h5> "The website is in Japanese, I can't understand it"
+                        <h5> Solution: </h5> HTTP Negotiation allows the client (browser) to demand its preferred resource 
+                        representation such as: 
+
+                        <ul>
+                            <li>Language (Accept-Language) - English (en), Spanish (es), Japanese (ja)</li>
+                            <li>Content-type (Accept) - HTML, XML, JSON</li>
+                            <li>Compression (Accept-Encoding) - Gzp, Brotli, Deflate</li>
+                        </ul>
+
+                        Then, the server checks if it has the representation the client is requesting. If match, it returns English
+                        version of the page, otherwise it will only return what the server has. 
+
+                        Furthermore, HTTP Compresssion is an essential characteristic of HTTP requests in where files are compressed
+                        into smaller size before sending over the network. This is crucial as it provides:
+
+                        <ul>
+                            <li>Faster page loading</li>
+                            <li>Search Engine Optimization (due to fast page loading)</li>
+                            <li>Decrease bandwidth usage</li>
+                        </ul>
+                    </p>
+
+                    <!-- Parameters -->
+                    <span>
+                       <label for="language"> Language:</label>
+                        <select name="language" id="language">
+                            <option value="english" > English </option>
+                            <option value="spanish"> Spanish </option>
+                            <option value="japanese"> Japanese </option>
+                        </select>
+                    </span>
+
+                    <span>
+                        <label for="content"> Content type:</label>
+                        <select name="content" id="content">
+                            <option value="html" > HTML </option>
+                            <option value="xml"> XML </option>
+                            <option value="json"> JSON </option>
+                        </select>
+                    </span>
+                    <span>
+                        <label for="compression"> Compression: </label>
+                        <select name="compression" id="compression">
+                            <option value="gzp" > Gzip </option>
+                            <option value="brotli"> Brotli </option>
+                            <option value="deflate"> Deflate </option>
+                        </select>
+                    </span>
+
+                    <!-- Feth -->
+                    <span><button type="button" id="negotiateButton"> Send Request </button></span>
+                    
+                    <!-- Response -->
+                    <p id="negotiateResponse"></p>
+
+                </section>
+            </main>
+
+            <!-- PAGE NAV -->
+            <nav class="page-nav">
+                <button id="corsPage" type="button"> CORS </button>
+
+                <button id="cachePage" type="button"> Caching </button>
+                <button id="negotiatePage" type="button"> Negotation </button>
+                <button id="largeMessages" type="button"> Large Messages </button>
+            </nav>
+        </div>
+    </body>
+</html>
