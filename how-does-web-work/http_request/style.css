@@ -1,6 +1,7 @@
 span::after {
    content: "\A";
    white-space: pre;
+   line-height: 1.5;
 }
 
 /* Extend the page/viewport vertically with flexible formatting */
