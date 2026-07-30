@@ -25,19 +25,19 @@ dropdownCompression.addEventListener('change', (event) => {
 });
 
 
-//send Pre-flight request 
+//send a simple request 
 async function sendNegotiateRequest(event){
      try {
           const fetchNegotiateRequest = await fetch('http://127.0.0.1:8080/flight', {
-               method: 'OPTION',
+               method: 'GET',
                headers: {
                     'Accept' : 'selectedContent',
                     'Accept-Language' : 'selectedLanguage',
-                    'Accept-Encoding' : 'selectedCompression'
+                    // 'Accept-Encoding' : 'selectedCompression' REMOVE BECAUSE IT IS A FORBIDDEN HEADER
                }
           });
 
-          const requestMessage = await fetchNegotiateRequest.text;
+          const requestMessage = await fetchNegotiateRequest.text();
           console.log(requestMessage);
           negotiateResponse.innerText = requestMessage;
 
@@ -50,10 +50,6 @@ async function sendNegotiateRequest(event){
 }
 
 negotiateButton.addEventListener('click', sendNegotiateRequest);
-
-
-//send actual request
-
 
 
 
