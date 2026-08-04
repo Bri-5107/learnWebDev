@@ -66,3 +66,29 @@ WINDOW
 
 where each node of the tree has various interfaces assigned to it which are useful in how we define the methods and properties for it 
 
+
+#Problem
+The website is in Japanese, and I can't understand it.
+
+hashtag#Solution
+HTTP Content Negotiation is where the client (browser) tells the server its preferred resource version by sending HTTP headers such as:
+
+1. Content type (Accept) : HTML, JSON, XML
+2. Language (Accept-Language): English (en), Japanese (ja), Spanish (es)
+3. Compression (Accept-Encoding): Gzip, Brotli, Deflate
+
+The server examines if it has the representation the client wants, if it has a matching version, it sends it back. 
+
+For example:
+Client: Accept-Language: en-US,en;q=0.9
+
+This asks the server, "I prefer the English version, do you have that?"
+
+Furthermore, HTTP Compression shrink big HTML, CSS, JS, and other files before sending them over the network. The browser then automatically decompresses them after download. 
+
+Benfits:
+✅ Increased page load speed
+✅ Reduced bandwidth
+✅ Better search engine optimization (SEO) 
+
+

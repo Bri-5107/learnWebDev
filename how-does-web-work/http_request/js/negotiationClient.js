@@ -10,7 +10,18 @@ const corsPageButton = document.getElementById("corsPage");
 const cachePageButton = document.getElementById("cachePage");
 const negotiatePage = document.getElementById("negotiatePage");
 
+// Navigation Button 
+corsPageButton.addEventListener('click', () => {
+    window.location.assign('cors.html');
+});
 
+cachePageButton.addEventListener('click', () => {
+    window.location.assign('caching.html');
+});
+
+negotiatePage.addEventListener('click', () => {
+    window.location.assign('negotiate.html');
+});
 
 
 //send a simple request 
@@ -21,7 +32,7 @@ async function sendNegotiateRequest(event){
      const selectedContent = dropdownContent.value;
 
      try {
-          const fetchNegotiateRequest = await fetch('http://127.0.0.1:8080/flight', {
+          const fetchNegotiateRequest = await fetch('http://127.0.0.1:8081', {
                method: 'GET',
                headers: {
                     'Accept' : selectedContent,
