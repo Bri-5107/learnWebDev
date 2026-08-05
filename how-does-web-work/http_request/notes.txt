@@ -92,3 +92,31 @@ Benfits:
 ✅ Better search engine optimization (SEO) 
 
 
+BACKEND FUNDAMENTALS - HTTP
+
+#Problem 
+You are building the frontend of a cafe's inventory system. A barista just sold a large latte, and your client application needs to tell the server to deduct milk from the inventory management system. How do ensure that this request reaches the correct backend destination? 
+
+
+#Solution
+Routing - how the request is received, matched, executed, and returned 
+
+Intent = HTTP Methods (GET, POST, PUT, etc) 
+Where = pathname (/users/123) 
+Intent (GET/) + Where(/users/123) = Route (GET/users/123) 
+
+Process:
+1. Receive & Match - the client sends the request (route) and is received in the backend. In the backend, the handler or controller checks the route and checks it against a routing table.
+2. Execute & Return - If it finds a matching route, the handler will execute the backend logic (like talking to a database to fetch a user), and then its final job is to send a response (like a JSON object or an HTML page) back to the client.
+
+Different types of Routing
+1. Static - a fixed, exact match (e.g. GET/users) 
+2. Dynamic 
+- path parameter - has a variable inside the route in place of value (e.g. GET/users/:id) 
+- query parameter - has a query inside the route where the client will supply the key-value pair after the '?'. It is useful in filtering, searching, and sorting (e.g GET/users?role=admin&active=true)
+3. Nested route - it is a hierarchical route for what you want to access. "I want to see user 123's 5th post (e.g. GET/users/123/post/5)
+4. Catch-All route - if a route doesn't match any of the routing table, it falls back to the catch-all route "/*" returning a non-match response 
+5. Version Routing - when new updates come in, developers create a new version route (e.g., GET /v2/users) while keeping GET /v1/users alive for older clients.
+
+
+
