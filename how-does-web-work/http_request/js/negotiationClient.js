@@ -32,7 +32,7 @@ async function sendNegotiateRequest(event){
      const selectedContent = dropdownContent.value;
 
      try {
-          const fetchNegotiateRequest = await fetch('http://127.0.0.1:8081', {
+          const fetchNegotiateRequest = await fetch('http://127.0.0.1.nip.io:8081', {
                method: 'GET',
                headers: {
                     'Accept' : selectedContent,
