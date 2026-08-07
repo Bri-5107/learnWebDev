@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Different Types of Routing </title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="Brian Dionisio">
+        <meta name="description" content="Simulate different types of routing">
+        <link rel="stylesheet" href="style.css"> 
+        <script scr="routingClient.js" type="module"></script>
+        <script scr="routingServer.js" type="module"></script>
+    </head>
+    <body> 
+        <h1> Simulation: Different Types of Routing </h1>
+
+        <p>
+            <h3> Static Routing </h3>
+            <button type="button" id="staticButton"> Fetch Books </button>
+        </p>
+
+        <p>
+            <h3> Dynamic Routing (Path Parameter) </h3>
+            <button type="button" id="parameterButton"> Fetch User 123 </button>
+        </p>
+
+        <p>
+            <h3> Query Parameter </h3>
+            <div class="query-form">
+                <input type="text" id="queryField" placeholder="Enter query">
+                <button type="button" id="queryButton"> Fetch query </button>
+            </div>
+        </p>
+
+        <p>
+            <h3> Route Versioning </h3>
+             <div class="versioning-form">
+                <button type="button" id="versionOneButton"> Fetch v1 </button>
+                <button type="button" id="versionTwoButton"> Fetch v2 </button>
+            </div>
+        </p>
+
+        <p>
+            <h3> Nested Route </h3>
+            <button type="button" id="nestedButton"> Fetch User 123 </button>
+        </p>
+
+        <p>
+            <h3> Catch-All Route </h3>
+            <button type="button" id="catchAllButton"> Fetch User 123 </button>
+        </p>
+
+         <!-- Response -->
+        <p>
+            <h3> Response </h3>
+            <p id="routeResponse"></p>
+        </p>
+    </body>
+</html>
