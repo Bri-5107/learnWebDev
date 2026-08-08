@@ -60,7 +60,21 @@ async function routeDynamic(event) {
 parameterButton.addEventListener('click', routeDynamic);
 
 //query listener
-queryField.addEventListener('change', saveQuery);
+async function routeQuery(event) {
+    try {
+        const userID = queryField.value;
+        const path = `/users?id=${userID}`;
+        const url = `${base}${path}`;
+        const fetchQueryRoute = await fetch(url);
+
+        const requestMessage = await fetchQueryRoute.json();
+        routeResponse.innerText = JSON.stringify(requestMessage, null, 2);
+
+    } catch (error) {
+        console.log(error);
+        routeResponse.innerText = "Error: Could not reach the server."; 
+    }
+}
 queryButton.addEventListener('click', routeQuery);
 
 //versioning listener
