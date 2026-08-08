@@ -42,14 +42,14 @@ async function routeDynamic(event) {
         const id =  '123';
         const path = `/users/${id}`;
         const url = `${base}${path}`;
-        const fetchRoute = await fetch(url, {
+        const fetchRouteDynamic = await fetch(url, {
             method: 'GET',
             headers: {
                 'Accept' : 'application/json',
             }
         });
 
-        const requestMessage = await fetchRoute.json();
+        const requestMessage = await fetchRouteDynamic.json();
         routeResponse.innerText = JSON.stringify(requestMessage,null,2);
 
     } catch (error) {
@@ -85,7 +85,7 @@ queryButton.addEventListener('click', routeQuery);
 //versioning listener
 async function routeV1(event) {
     try {
-        const path = `/users/v1`;
+        const path = '/users/v1';
         const url = `${base}${path}`;
         const fetchV1Route = await fetch(url, {
             method: 'GET',
@@ -106,7 +106,7 @@ v1Button.addEventListener('click', routeV1);
 
 async function routeV2(event) {
     try {
-        const path = `/users/v2`;
+        const path = '/users/v2';
         const url = `${base}${path}`;
         const fetchV2Route = await fetch(url, {
             method: 'GET',
@@ -126,9 +126,47 @@ async function routeV2(event) {
 v2Button.addEventListener('click', routeV2);
 
 //nested listener
+async function routeNested(event) {
+    try {
+        const path = '/users/123/post/5';
+        const url = `${base}${path}`;
+        const fetchNestedRoute = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept' : 'application/json',
+            }
+        });
+
+        const requestMessage = await fetchNestedRoute.json();
+        routeResponse.innerText = JSON.stringify(requestMessage, null, 2);
+
+    } catch (error) {
+        console.log(error);
+        routeResponse.innerText = "Error: Could not reach the server."; 
+    }
+}
 nestedButton.addEventListener('click', routeNested);
 
 //catch all listener
+async function routeCatchAll(event) {
+    try {
+        const path = '/some-random-path-that-does-not-exist';
+        const url = `${base}${path}`;
+        const fetchCatchAllRoute = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept' : 'application/json',
+            }
+        });
+
+        const requestMessage = await fetchCatchAllRoute.json();
+        routeResponse.innerText = JSON.stringify(requestMessage, null, 2);
+
+    } catch (error) {
+        console.log(error);
+        routeResponse.innerText = "Error: Could not reach the server."; 
+    }
+}
 catchAllButton.addEventListener('click', routeCatchAll);
 
 
