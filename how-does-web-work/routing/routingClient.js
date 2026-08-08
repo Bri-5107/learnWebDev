@@ -19,14 +19,14 @@ async function routeStatic(event) {
     try {
         const path = '/users';
         const url = `${base}${path}`;
-        const fetchRouteStatic = await fetch(url, {
+        const fetchStaticRoute = await fetch(url, {
             method: 'GET',
             headers: {
                 'Accept' : 'application/json'
             }
         });
 
-        const requestMessage = await fetchRouteStatic.json();
+        const requestMessage = await fetchStaticRoute.json();
         routeResponse.innerText = JSON.stringify(requestMessage,null,2);
 
     } catch (error) {
@@ -37,6 +37,26 @@ async function routeStatic(event) {
 staticButton.addEventListener('click', routeStatic);
 
 //dynamic listener
+async function routeDynamic(event) {
+    try {
+        const id =  '123';
+        const path = `/users/${id}`;
+        const url = `${base}${path}`;
+        const fetchRoute = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept' : 'application/json',
+            }
+        });
+
+        const requestMessage = await fetchRoute.json();
+        routeResponse.innerText = JSON.stringify(requestMessage,null,2);
+
+    } catch (error) {
+        console.log(error);
+        routeResponse.innerText = "Error: Could not reach the server."; 
+    }
+}
 parameterButton.addEventListener('click', routeDynamic);
 
 //query listener
