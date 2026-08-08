@@ -65,7 +65,12 @@ async function routeQuery(event) {
         const userID = queryField.value;
         const path = `/users?id=${userID}`;
         const url = `${base}${path}`;
-        const fetchQueryRoute = await fetch(url);
+        const fetchQueryRoute = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept' : 'application/json',
+            }
+        });
 
         const requestMessage = await fetchQueryRoute.json();
         routeResponse.innerText = JSON.stringify(requestMessage, null, 2);
@@ -78,7 +83,46 @@ async function routeQuery(event) {
 queryButton.addEventListener('click', routeQuery);
 
 //versioning listener
+async function routeV1(event) {
+    try {
+        const path = `/users/v1`;
+        const url = `${base}${path}`;
+        const fetchV1Route = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept' : 'application/json',
+            }
+        });
+
+        const requestMessage = await fetchV1Route.json();
+        routeResponse.innerText = JSON.stringify(requestMessage, null, 2);
+
+    } catch (error) {
+        console.log(error);
+        routeResponse.innerText = "Error: Could not reach the server."; 
+    }
+}
 v1Button.addEventListener('click', routeV1);
+
+async function routeV2(event) {
+    try {
+        const path = `/users/v2`;
+        const url = `${base}${path}`;
+        const fetchV2Route = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept' : 'application/json',
+            }
+        });
+
+        const requestMessage = await fetchV2Route.json();
+        routeResponse.innerText = JSON.stringify(requestMessage, null, 2);
+
+    } catch (error) {
+        console.log(error);
+        routeResponse.innerText = "Error: Could not reach the server."; 
+    }
+}
 v2Button.addEventListener('click', routeV2);
 
 //nested listener
